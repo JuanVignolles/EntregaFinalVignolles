@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #f2f2f2;
+}
+
+.menu a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.menu a.active {
+  color: #ff6f61; /* color del link activo */
+  font-weight: 700;
+}
