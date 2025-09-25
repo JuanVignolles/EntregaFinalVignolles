@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage.jsx";
 import NavBar from "./components/NavBar.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import CategoryPage from "./pages/CategoryPage.jsx";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/item/:id" element={<ProductDetailPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/category/:categoryId" element={<CategoryPage />} />
       </Routes>
     </div>
   );
