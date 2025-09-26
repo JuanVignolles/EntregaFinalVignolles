@@ -1,85 +1,64 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function CheckoutPage() {
   const { cart, clearCart } = useCart();
+  const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    address: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", address: "" });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const handleChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!cart || cart.length === 0) {
-      alert("Tu carrito está vacío. No puedes finalizar la compra.");
+    if (cart.length === 0) {
+      alert("El carrito está vacío ❌");
       return;
     }
 
-    const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
-
     alert(
-      `Compra confirmada!\n\nNombre: ${formData.name}\nEmail: ${formData.email}\nDirección: ${formData.address}\n\nTotal de productos: ${totalUnits}`
+      `Compra confirmada ✅\n\nGracias ${formData.name}, te enviaremos un email a ${formData.email}`
     );
 
     clearCart();
-    setFormData({ name: "", email: "", address: "" });
+    navigate("/"); // redirige al inicio
   };
-
-  if (!cart || cart.length === 0)
-    return <p>Tu carrito está vacío. Agrega productos antes de continuar.</p>;
 
   return (
     <div>
-      <h2>Finalizar Compra</h2>
-      <form
-        onSubmit={handleSubmit}
-        style={{ display: "flex", flexDirection: "column", maxWidth: "300px" }}
-      >
-        <label>
-          Nombre:
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </label>
-
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-
-        <label>
-          Dirección:
-          <input
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-          />
-        </label>
-
-        <button type="submit">Confirmar Compra</button>
+      <h2>Finalizar compra</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Nombre"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="address"
+          placeholder="Dirección"
+          value={formData.address}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Confirmar compra</button>
       </form>
     </div>
   );
 }
+
+

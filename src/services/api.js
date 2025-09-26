@@ -1,16 +1,21 @@
-import { products } from "../data/products";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
 
+// Obtener todos los productos
 export async function getProducts() {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(products), 500);
-  });
+  const productsCol = collection(db, "products");
+  const productSnapshot = await getDocs(productsCol);
+  return productSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 }
 
+// Obtener producto por id
 export async function getProductById(id) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const product = products.find((p) => p.id === id);
-      product ? resolve(product) : reject(new Error("Producto no encontrado"));
-    }, 500);
-  });
+  const productRef = doc(db, "products", id);
+  const productSnap = await getDoc(productRef);
+
+  if (productSnap.exists()) {
+    return { id: productSnap.id, ...productSnap.data() };
+  } else {
+    throw new Error("Producto no encontrado");
+  }
 }
