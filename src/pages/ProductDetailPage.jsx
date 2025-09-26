@@ -1,17 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProductById } from "../services/api.js";
-import ItemCount from "../components/ItemCount.jsx"; // <-- importamos ItemCount
+import ItemCount from "../components/ItemCount.jsx";
+import { useCart } from "../context/CartContext";  // <-- importar hook del contexto
 
 export default function ProductDetailPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [added, setAdded] = useState(false); // controla si ya agregamos al carrito
+  const [added, setAdded] = useState(false);
+
+  const { addToCart } = useCart(); // <-- traemos addToCart
 
   const handleAddToCart = (quantity) => {
-    console.log(`Agregaste ${quantity} unidades al carrito`);
+    addToCart(product, quantity);   // <-- agregamos al carrito
     setAdded(true);
-    // Aquí luego se podría actualizar el Context del carrito
   };
 
   useEffect(() => {

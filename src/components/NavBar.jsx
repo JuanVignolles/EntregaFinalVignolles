@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import './NavBar.css';
+import CartWidget from "./CartWidget.jsx";
 
 //  categorías que quiero mostrar
 const categories = [
@@ -28,6 +29,7 @@ export default function NavBar() {
           </NavLink>
         ))}
       </nav>
+      <CartWidget />
     </header>
   );
 }
