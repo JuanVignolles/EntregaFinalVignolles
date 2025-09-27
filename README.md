@@ -1,18 +1,46 @@
-# React + Vite
+Aromática Fragancias 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de e-commerce de velas aromáticas desarrollado con React + Vite para trabajo final del curso React de Coderhouse.
 
-Currently, two official plugins are available:
+Descripción:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto consiste en una tienda online de velas aromáticas, con:
 
-## React Compiler
+-Visualización de categorías y productos.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+-Página de detalles de cada producto.
 
-Note: This will impact Vite dev & build performances.
+-Carrito de compras persistente (localStorage).
 
-## Expanding the ESLint configuration
+-Checkout con formulario básico.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-Footer y NavBar funcionales.
+
+-Estilos modernos, y modularizados por componente.
+
+Tecnologías:
+
+-JavaScript
+
+-React
+
+-React Router DOM
+
+-Context API (Carrito)
+
+-Firebase (configuración de Firestore)
+
+-Vite como bundler
+
+-CSS modular por componente
+
+Uso:
+
+-Acceder a la página principal para ver las categorías de velas.
+
+-Hacer click en una categoría para ver los productos correspondientes.
+
+-Agregar productos al carrito desde la página de detalle.
+
+-Finalizar compra en la página de checkout.
+
