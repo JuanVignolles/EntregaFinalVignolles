@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './ItemCount.css';
 
 export default function ItemCount({ stock = 10, initial = 1, onAdd }) {
   const [count, setCount] = useState(initial);
@@ -16,13 +17,13 @@ export default function ItemCount({ stock = 10, initial = 1, onAdd }) {
   };
 
   return (
-    <div>
-      <div>
+    <div className="item-count">
+      <div className="counter-buttons">
         <button onClick={handleDecrement}>-</button>
-        <span style={{ margin: "0 10px" }}>{count}</span>
+        <span>{count}</span>
         <button onClick={handleIncrement}>+</button>
       </div>
-      <button onClick={handleAdd} style={{ marginTop: "10px" }}>
+      <button onClick={handleAdd} className="add-button">
         Agregar al carrito
       </button>
     </div>

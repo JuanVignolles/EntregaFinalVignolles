@@ -2,18 +2,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
-  background-color: #f2f2f2;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #fde9f8, #c2aeba);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
 }
 
 .menu a {
-  margin-left: 16px;
+  margin-left: 1rem;
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
 }
 
-.menu a.active {
-  color: #ff6f61; /* color del link activo */
-  font-weight: 700;
+.menu a:hover, .menu a.active {
+  background-color: #ff6f61;
+  color: #fff;
 }

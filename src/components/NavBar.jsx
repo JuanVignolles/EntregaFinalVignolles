@@ -16,7 +16,7 @@ export default function NavBar() {
 
   return (
     <header className="navbar">
-      <div className="brand">Aromática</div>
+      <div className="brand">Aromática Fragancias</div>
       <nav className="menu">
         <NavLink to="/" className={activeClass}>Inicio</NavLink>
         {categories.map((cat) => (

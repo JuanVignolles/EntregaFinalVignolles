@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import './Checkout.css';
 
 export default function CheckoutPage() {
   const { cart, clearCart } = useCart();
@@ -28,7 +29,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div>
+    <div className="checkout">
       <h2>Finalizar compra</h2>
       <form onSubmit={handleSubmit}>
         <input

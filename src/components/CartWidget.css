@@ -1,0 +1,18 @@
+.cart-widget {
+  font-size: 1.2rem;
+  color: #333;
+  background: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s;
+}
+
+.cart-widget:hover {
+  background-color: #ff6f61;
+  color: #fff;
+  border-color: #ff6f61;
+}

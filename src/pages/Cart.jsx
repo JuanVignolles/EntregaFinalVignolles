@@ -1,5 +1,6 @@
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
+import './Cart.css';
 
 export default function Cart() {
   const { cart, clearCart } = useCart();
@@ -12,7 +13,7 @@ export default function Cart() {
   );
 
   return (
-    <div>
+    <div className="cart">
       <h2>Carrito de compras</h2>
       <ul>
         {cart.map((item) => (
