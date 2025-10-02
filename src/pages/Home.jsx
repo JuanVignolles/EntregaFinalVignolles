@@ -1,53 +1,46 @@
-import { Link } from "react-router-dom";
 import "./Home.css";
 
 export default function Home() {
-  const categories = [
-    {
-      id: "aromaticas",
-      title: "Velas Aromáticas",
-      description:
-        "Perfuma tus espacios con fragancias envolventes. Ideales para crear ambientes cálidos, relajantes o energizantes según tu estado de ánimo.",
-    },
-    {
-      id: "decorativas",
-      title: "Velas Decorativas",
-      description:
-        "Diseños únicos que embellecen tu hogar. No solo iluminan, también se convierten en piezas de arte que destacan en cualquier rincón.",
-    },
-    {
-      id: "naturales",
-      title: "Velas Naturales",
-      description:
-        "Elaboradas con cera de soja y aceites esenciales, libres de químicos. Una opción ecológica y consciente para tus rituales y relax.",
-    },
-    {
-      id: "regalo",
-      title: "Velas para Regalo",
-      description:
-        "El obsequio perfecto para cualquier ocasión. Presentaciones elegantes y listas para sorprender a esa persona especial.",
-    },
-  ];
-
   return (
     <div className="home">
-      <section className="intro">
+      {/* Sección: ¿Quiénes somos? */}
+      <section className="about">
+        <h2>¿Quiénes somos?</h2>
         <p>
-          Descubre nuestra colección de velas hechas con amor, pensadas para
-          transformar tu espacio en un refugio de calma, estilo y bienestar.
+          Somos Aromática Fragancias, especialistas en velas artesanales
+          creadas con amor para transformar tus espacios en rincones únicos.
+          Buscamos brindar calidez, estilo y bienestar en cada una de nuestras
+          piezas.
         </p>
       </section>
 
-      <section className="categories">
-        {categories.map((cat) => (
-          <div key={cat.id} className="category-card">
-            <h2>{cat.title}</h2>
-            <p>{cat.description}</p>
-            <Link to={`/category/${cat.id}`} className="btn">
-              Ver {cat.title}
-            </Link>
+      {/* Carrusel de info */}
+      <section className="carousel">
+        <h3>Conócenos mejor</h3>
+        <div className="carousel-placeholder">
+          {/* Aquí luego implementamos el carrusel */}
+          <p>[ Carrusel con logo, tipos de velas, métodos de pago y envíos ]</p>
+        </div>
+      </section>
+
+      {/* Promociones / Ofertas */}
+      <section className="promotions">
+        <h3>Promociones y Ofertas</h3>
+        <div className="promotions-grid">
+          {/* Placeholder de productos destacados */}
+          <div className="promo-card">
+            <img src="/img/vela1.jpg" alt="Vela Promo 1" />
+            <p>Vela Floral - $1200</p>
           </div>
-        ))}
+          <div className="promo-card">
+            <img src="/img/vela2.jpg" alt="Vela Promo 2" />
+            <p>Vela Cítrica - $1500</p>
+          </div>
+          <div className="promo-card">
+            <img src="/img/vela3.jpg" alt="Vela Promo 3" />
+            <p>Pack 2x1 - $2000</p>
+          </div>
+        </div>
       </section>
     </div>
   );

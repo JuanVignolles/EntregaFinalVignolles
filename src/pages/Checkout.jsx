@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import './Checkout.css';
+import { createOrder } from "../services/orders";
 
 export default function CheckoutPage() {
   const { cart, clearCart } = useCart();
@@ -12,22 +13,37 @@ export default function CheckoutPage() {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (cart.length === 0) {
-      alert("El carrito está vacío ❌");
-      return;
-    }
+  if (cart.length === 0) {
+    alert("El carrito está vacío ❌");
+    return;
+  }
 
-    alert(
-      `Compra confirmada ✅\n\nGracias ${formData.name}, te enviaremos un email a ${formData.email}`
-    );
-
-    clearCart();
-    navigate("/"); // redirige al inicio
+  const order = {
+    buyer: formData,
+    items: cart.map((item) => ({
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      quantity: item.quantity,
+    })),
+    total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
   };
 
+  try {
+    const orderId = await createOrder(order);
+    alert(
+      `Compra confirmada ✅\n\nGracias ${formData.name}!\nTu número de orden es: ${orderId}`
+    );
+    clearCart();
+    navigate("/");
+  } catch (error) {
+  console.log("Error en createOrder:", error);
+  throw error; 
+}
+};
   return (
     <div className="checkout">
       <h2>Finalizar compra</h2>

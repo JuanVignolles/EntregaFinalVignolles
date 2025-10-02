@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../services/api.js";
 import ItemList from "../components/ItemList.jsx";
+import Loader from "../components/Loader.jsx";
 
 export default function ItemListContainer() {
   const { categoryId } = useParams(); // para filtrar por categoría
@@ -32,11 +33,11 @@ export default function ItemListContainer() {
         {categoryId ? `Categoría: ${categoryId}` : "Productos destacados"}
       </h2>
 
-      {loading ? (
-        <p>Cargando productos...</p>
-      ) : (
-        <ItemList products={products} />
-      )}
+    {loading ? (
+      <Loader />
+    ) : (
+      <ItemList products={products} />
+    )}
     </div>
   );
 }

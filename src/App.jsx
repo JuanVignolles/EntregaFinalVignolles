@@ -7,17 +7,18 @@ import Cart from "./pages/Cart.jsx";
 import CheckoutPage from "./pages/Checkout.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
+import Productos from "./pages/Products.jsx";   // 👈 importar tu nueva página
 
 export default function App() {
   return (
     <div className="app-container">
       <NavBar />
-      
-      {/* main-content incluye título + rutas */}
+
       <div className="main-content">
         <h1>Tienda de Velas Aromáticas 🕯️</h1>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/productos" element={<Productos />} /> {/* 👈 nueva ruta */}
           <Route path="/category/:categoryId" element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
@@ -30,4 +31,5 @@ export default function App() {
     </div>
   );
 }
+
 
