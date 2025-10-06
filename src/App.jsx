@@ -7,7 +7,8 @@ import Cart from "./pages/Cart.jsx";
 import CheckoutPage from "./pages/Checkout.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
-import Productos from "./pages/Products.jsx";   // 👈 importar tu nueva página
+import Productos from "./pages/Products.jsx";
+import Contact from "./pages/Contact.jsx";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

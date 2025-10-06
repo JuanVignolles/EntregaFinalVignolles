@@ -39,6 +39,7 @@ export default function Offers() {
           <div key={offer.id} className="offer-card">
             <img src={offer.img} alt={offer.title} />
             <h3>{offer.title}</h3>
+            <p>{offer.description}</p>
             <p className="price">
               <span className="old">${offer.price}</span>{" "}
               <span className="new">${offer.discountPrice}</span>

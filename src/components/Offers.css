@@ -1,33 +1,55 @@
+/* ===== SECCIÓN OFERTAS ===== */
 .offers {
   padding: 2rem;
   text-align: center;
 }
 
 .offers h2 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #333;
 }
 
+/* ===== GRID ===== */
 .offers-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: center;
 }
 
+/* ===== CARD ===== */
 .offer-card {
   background: #fff;
-  padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
 }
 
 .offer-card:hover {
   transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
+/* ===== IMAGEN ===== */
 .offer-card img {
   width: 100%;
+  height: 220px; 
+  object-fit: cover;
   border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+}
+
+/* ===== TEXTO ===== */
+.offer-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+  color: #333;
 }
 
 .price {
@@ -46,6 +68,7 @@
   font-weight: bold;
 }
 
+/* ===== BOTÓN ===== */
 .offer-card button {
   background: #e63946;
   color: white;
@@ -53,15 +76,21 @@
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s;
 }
 
 .offer-card button:hover {
   background: #c02734;
 }
 
-/* Responsivo */
+/* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
   .offers-grid {
     grid-template-columns: 1fr;
+  }
+
+  .offer-card img {
+    height: 200px;
   }
 }

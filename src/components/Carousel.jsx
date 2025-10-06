@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/config";
-import './Carousel.css';
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import "./Carousel.css";
 
 export default function Carousel() {
   const [slides, setSlides] = useState([]);
@@ -11,7 +12,7 @@ export default function Carousel() {
   useEffect(() => {
     const fetchSlides = async () => {
       try {
-        const slidesRef = collection(db, "slide"); // colección en Firestore
+        const slidesRef = collection(db, "slide");
         const snapshot = await getDocs(slidesRef);
         const slidesData = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -28,7 +29,6 @@ export default function Carousel() {
     fetchSlides();
   }, []);
 
-  // auto-play cada 3s
   useEffect(() => {
     if (slides.length > 0) {
       const interval = setInterval(() => {
@@ -38,9 +38,17 @@ export default function Carousel() {
     }
   }, [slides]);
 
+  const prevSlide = () => {
+    setIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setIndex((prev) => (prev + 1) % slides.length);
+  };
+
   if (loading) return <p>Cargando carrusel...</p>;
 
-    return (
+  return (
     <div className="carousel-container">
       {slides.map((slide, i) => (
         <img
@@ -50,6 +58,25 @@ export default function Carousel() {
           className={`carousel-image ${i === index ? "active" : "hidden"}`}
         />
       ))}
+
+      {/* Flechas */}
+      <button className="carousel-btn prev" onClick={prevSlide}>
+        <FaChevronLeft />
+      </button>
+      <button className="carousel-btn next" onClick={nextSlide}>
+        <FaChevronRight />
+      </button>
+
+      {/* Puntitos */}
+      <div className="carousel-dots">
+        {slides.map((_, i) => (
+          <span
+            key={i}
+            className={`dot ${i === index ? "active" : ""}`}
+            onClick={() => setIndex(i)}
+          ></span>
+        ))}
+      </div>
     </div>
   );
 }
