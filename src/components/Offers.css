@@ -13,21 +13,24 @@
 /* ===== GRID ===== */
 .offers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px;
   justify-items: center;
+  justify-content: center; 
+  max-width: 1000px;    
+  margin: 0 auto;     
 }
 
 /* ===== CARD ===== */
 .offer-card {
-  background: #fff;
+  background: linear-gradient(135deg, #fff8fa, #fde9f8);
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 0.8rem;
   transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
 }
 
 .offer-card:hover {
@@ -41,13 +44,13 @@
   height: 220px; 
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   background-color: #f7f7f7;
 }
 
 /* ===== TEXTO ===== */
 .offer-card h3 {
-  margin: 10px 0 5px;
+  margin: 6px 0 4px;
   font-size: 1.1rem;
   color: #333;
 }

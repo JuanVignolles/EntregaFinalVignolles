@@ -5,6 +5,12 @@ import Offers from "../components/Offers";
 export default function Home() {
   return (
     <div className="home">
+      {/* Carrusel de info */}
+      <Carousel />
+
+      {/* Promociones / Ofertas */}
+      <Offers />
+
       {/* Sección: ¿Quiénes somos? */}
       <section className="about">
         <h2>¿Quiénes somos?</h2>
@@ -15,12 +21,6 @@ export default function Home() {
           piezas.
         </p>
       </section>
-
-      {/* Carrusel de info */}
-      <Carousel />
-
-      {/* Promociones / Ofertas */}
-      <Offers />
     </div>
   );
 }

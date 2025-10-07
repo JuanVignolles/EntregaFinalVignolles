@@ -19,7 +19,6 @@ export default function App() {
         <NavBar />
         <Toast />
         <div className="main-content">
-          <h1>Tienda de Velas Aromáticas 🕯️</h1>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/productos" element={<Productos />} />

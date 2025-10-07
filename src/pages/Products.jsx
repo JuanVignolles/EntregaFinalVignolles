@@ -26,7 +26,7 @@ export default function Productos() {
     fetchProductos();
   }, []);
 
-  // 🔥 categorías correctas
+  // 🔥 categorías 
   const categorias = ["florales", "dulces", "amaderadas", "citricas"];
 
   if (loading) return <Loader />;
@@ -41,7 +41,7 @@ export default function Productos() {
             {cat.charAt(0).toUpperCase() + cat.slice(1)}
           </h3>
 
-          <div className="productos-grid"> {/* 👈 clase corregida */}
+          <div className="productos-grid"> 
             {productos
               .filter((p) => p.category === cat)
               .map((p) => (

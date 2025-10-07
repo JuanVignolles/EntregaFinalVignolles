@@ -7,13 +7,15 @@ export default function NavBar() {
 
   return (
     <header className="navbar">
-      <div className="brand">Aromática Fragancias</div>
-      <nav className="menu">
-        <NavLink to="/" className={activeClass}>Inicio</NavLink>
-        <NavLink to="/productos" className={activeClass}>Productos</NavLink>
-        <NavLink to="/contacto" className={activeClass}>Contacto</NavLink>
-      </nav>
+      <div className="navbar-content">
+        <div className="brand">Aromática Fragancias</div>
+        <nav className="menu">
+          <NavLink to="/" className={activeClass}>Inicio</NavLink>
+          <NavLink to="/productos" className={activeClass}>Productos</NavLink>
+          <NavLink to="/contacto" className={activeClass}>Contacto</NavLink>
+        </nav>
       <CartWidget />
+      </div>
     </header>
   );
 }

@@ -38,7 +38,7 @@ export default function Cart() {
       <button onClick={clearCart}>Vaciar carrito</button>
       <br />
       <Link to="/checkout">
-        <button>Finalizar compra</button>
+        <button>Concretar compra</button>
       </Link>
     </div>
   );
