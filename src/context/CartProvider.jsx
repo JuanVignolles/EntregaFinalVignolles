@@ -1,40 +1,39 @@
 import { useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
 
-export default function CartProvider({ children }) {
-  // 1) Estado inicial leyendo de localStorage
+export function CartProvider({ children }) {
   const [cart, setCart] = useState(() => {
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
-  // 2) Guardar cambios en localStorage cuando el carrito cambie
+  const [showToast, setShowToast] = useState(false);
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // 3) Funciones del carrito
   const addToCart = (product, quantity = 1) => {
     setCart((prev) => {
-      const existing = prev.find((p) => p.id === product.id);
+      const existing = prev.find((item) => item.id === product.id);
       if (existing) {
-        return prev.map((p) =>
-          p.id === product.id ? { ...p, quantity: p.quantity + quantity } : p
+        return prev.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
         );
       }
       return [...prev, { ...product, quantity }];
     });
+
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
   };
 
   const clearCart = () => setCart([]);
-
   const totalUnits = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-  return (
-    <CartContext.Provider value={{ cart, addToCart, clearCart, totalUnits }}>
-      {children}
-    </CartContext.Provider>
-  );
+  const value = { cart, addToCart, clearCart, totalUnits, showToast };
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
-
-

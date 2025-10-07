@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/config";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext.js";
 import Loader from "../components/Loader";
 import "./Products.css";
 

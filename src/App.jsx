@@ -9,29 +9,34 @@ import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import Productos from "./pages/Products.jsx";
 import Contact from "./pages/Contact.jsx";
+import { CartProvider } from "./context/CartProvider.jsx";
+import Toast from "./components/Toast.jsx";
 
 export default function App() {
   return (
-    <div className="app-container">
-      <NavBar />
-
-      <div className="main-content">
-        <h1>Tienda de Velas Aromáticas 🕯️</h1>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/productos" element={<Productos />} /> {/* 👈 nueva ruta */}
-          <Route path="/category/:categoryId" element={<ItemListContainer />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/contacto" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+    <CartProvider>
+      <div className="app-container">
+        <NavBar />
+        <Toast />
+        <div className="main-content">
+          <h1>Tienda de Velas Aromáticas 🕯️</h1>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/productos" element={<Productos />} />
+            <Route path="/category/:categoryId" element={<ItemListContainer />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/contacto" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-
-      <Footer />
-    </div>
+    </CartProvider>
   );
 }
+
+
 
 

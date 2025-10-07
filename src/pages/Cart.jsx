@@ -1,11 +1,22 @@
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext.js";
 import { Link } from "react-router-dom";
-import './Cart.css';
+import "./Cart.css";
 
 export default function Cart() {
   const { cart, clearCart } = useCart();
 
-  if (!cart || cart.length === 0) return <p>El carrito está vacío.</p>;
+  if (!cart || cart.length === 0) {
+    return (
+      <div className="empty-cart">
+        <div className="empty-cart-icon">🛒</div>
+        <h2>Tu carrito está vacío</h2>
+        <p>¡Explora nuestros productos y encontrá tu fragancia ideal!</p>
+        <Link to="/productos" className="back-btn">
+          Ver productos
+        </Link>
+      </div>
+    );
+  }
 
   const total = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -32,3 +43,4 @@ export default function Cart() {
     </div>
   );
 }
+

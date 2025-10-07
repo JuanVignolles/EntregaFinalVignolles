@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProductById } from "../services/api.js";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/CartContext.js";
 import ItemDetail from "../components/ItemDetail.jsx";
 
 export default function ItemDetailContainer() {
