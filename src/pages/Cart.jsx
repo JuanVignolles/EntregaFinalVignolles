@@ -34,12 +34,14 @@ export default function Cart() {
           </li>
         ))}
       </ul>
-      <h3>Total: ${total}</h3>
-      <button onClick={clearCart}>Vaciar carrito</button>
-      <br />
-      <Link to="/checkout">
-        <button>Concretar compra</button>
-      </Link>
+      <div className="cart-buttons">
+        <h3>Total: ${total}</h3>
+        <button onClick={clearCart}>Vaciar carrito</button>
+        <br />
+        <Link to="/checkout">
+          <button>Avanzar a la compra</button>
+        </Link>
+      </div>
     </div>
   );
 }

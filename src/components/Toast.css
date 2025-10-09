@@ -1,6 +1,6 @@
 .toast {
   position: fixed;
-  top: 100px; /* Ajustá según la altura de tu navbar */
+  top: 100px; 
   left: 50%;
   transform: translate(-50%, -10px);
   background: #222;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext.js";
 import { useNavigate } from "react-router-dom";
-import './Checkout.css';
+import "./Checkout.css";
 import { createOrder } from "../services/orders";
 
 export default function CheckoutPage() {
@@ -14,39 +14,41 @@ export default function CheckoutPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (cart.length === 0) {
-    alert("El carrito está vacío ❌");
-    return;
-  }
+    if (cart.length === 0) {
+      alert("El carrito está vacío ❌");
+      return;
+    }
 
-  const order = {
-    buyer: formData,
-    items: cart.map((item) => ({
-      id: item.id,
-      title: item.title,
-      price: item.price,
-      quantity: item.quantity,
-    })),
-    total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    const order = {
+      buyer: formData,
+      items: cart.map((item) => ({
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        quantity: item.quantity,
+      })),
+      total: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    };
+
+    try {
+      const orderId = await createOrder(order);
+      alert(
+        `Compra confirmada ✅\n\nGracias ${formData.name}!\nTu número de orden es: ${orderId}`
+      );
+      clearCart();
+      navigate("/");
+    } catch (error) {
+      console.log("Error en createOrder:", error);
+      throw error;
+    }
   };
 
-  try {
-    const orderId = await createOrder(order);
-    alert(
-      `Compra confirmada ✅\n\nGracias ${formData.name}!\nTu número de orden es: ${orderId}`
-    );
-    clearCart();
-    navigate("/");
-  } catch (error) {
-  console.log("Error en createOrder:", error);
-  throw error; 
-}
-};
   return (
     <div className="checkout">
       <h2>Finalizar compra</h2>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -72,10 +74,17 @@ export default function CheckoutPage() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Confirmar compra</button>
+
+        <div className="checkout-buttons">
+          <button type="button" onClick={() => navigate("/cart")} className="back-btn">
+            ← Volver al carrito
+          </button>
+          <button type="submit">Confirmar compra</button>
+        </div>
       </form>
     </div>
   );
 }
+
 
 

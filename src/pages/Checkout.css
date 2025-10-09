@@ -2,10 +2,14 @@
   max-width: 500px;
   margin: 2rem auto;
   padding: 2rem;
-  background: #fff;
+  background: url("/img/checkout-bg.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 12px;
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   text-align: center;
+  color: #fff;
 }
 
 .checkout form {
@@ -33,4 +37,25 @@
 
 .checkout button:hover {
   background-color: #e65b50;
+}
+
+.checkout-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.back-btn {
+  background: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.back-btn:hover {
+  background: #b3b3b3;
 }

@@ -10,11 +10,9 @@
 }
 
 .info-section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 3rem;
   color: #ffffff;
-  background-color: #02020259;
-  font-family: "Playfair Display", serif;
 }
 
 /* ===== GRID ===== */
