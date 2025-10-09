@@ -1,6 +1,7 @@
 import "./Home.css";
 import Carousel from "../components/Carousel.jsx";
 import Offers from "../components/Offers";
+import InfoSection from "../components/InfoSection.jsx";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
           piezas.
         </p>
       </section>
+      {/* Sección de información*/}
+      <InfoSection />
     </div>
   );
 }

@@ -2,7 +2,10 @@
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
-  background: linear-gradient(135deg, #fff8fa, #fde9f8);
+  background: url("/img/contact-bg.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   text-align: center;
@@ -10,7 +13,7 @@
 }
 
 .contact-container h2 {
-  color: #333;
+  color: #ffffff;
   margin-bottom: 15px;
   font-size: 2rem;
 }
@@ -18,7 +21,7 @@
 .intro {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: #ffffff;
   margin-bottom: 30px;
   padding: 0 10px;
 }
@@ -43,7 +46,7 @@
   justify-content: center;
   gap: 10px;
   margin: 8px 0;
-  color: #444;
+  color: #ffffff;
   font-size: 1rem;
 }
 
@@ -60,7 +63,7 @@
 .contact-form h3 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333;
+  color: #ffffff;
 }
 
 .form-group {
@@ -70,7 +73,7 @@
 label {
   display: block;
   font-weight: 500;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 6px;
 }
 

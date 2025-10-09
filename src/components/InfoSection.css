@@ -1,0 +1,100 @@
+/* ===== SECCIÓN INFO ===== */
+.info-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: url("/img/info-bg.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+}
+
+.info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+  background-color: #02020259;
+  font-family: "Playfair Display", serif;
+}
+
+/* ===== GRID ===== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.info-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== TÍTULO ===== */
+.info-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.6rem;
+  border-bottom: 2px solid #e63946;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+/* ===== FLECHA ===== */
+.arrow {
+  font-size: 1.3rem;
+  color: #000000;
+  transition: transform 0.3s ease;
+}
+
+.arrow.up {
+  transform: rotate(180deg);
+}
+
+/* ===== CONTENIDO ===== */
+.info-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.info-card.open .info-content {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.info-content p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
