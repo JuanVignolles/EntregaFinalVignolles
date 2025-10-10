@@ -15,8 +15,8 @@
 .offers h2 {
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.6);
+  color: #f7f7f7;
+  text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
 }
 
 /* ===== GRID ===== */

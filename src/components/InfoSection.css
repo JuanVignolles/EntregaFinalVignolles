@@ -12,7 +12,8 @@
 .info-section h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
-  color: #ffffff;
+  color: #f7f7f7;
+  text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
 }
 
 /* ===== GRID ===== */
@@ -26,7 +27,7 @@
 
 /* ===== CARD ===== */
 .info-card {
-  background: #fff;
+  background-color: #f7f7f7;
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   padding: 2rem 1rem;

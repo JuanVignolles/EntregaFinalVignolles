@@ -11,9 +11,9 @@
 }
 .about h2 {
   font-size: 2.5rem;
-  color: #ffffff;
+  color: #f7f7f7;
   margin-bottom: 1rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
 }
 
 .about p {
