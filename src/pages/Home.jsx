@@ -2,6 +2,7 @@ import "./Home.css";
 import Carousel from "../components/Carousel.jsx";
 import Offers from "../components/Offers";
 import InfoSection from "../components/InfoSection.jsx";
+import ShopInfo from "../components/ShopInfo.jsx";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       </section>
       {/* Sección de información*/}
       <InfoSection />
+      <ShopInfo />
     </div>
   );
 }

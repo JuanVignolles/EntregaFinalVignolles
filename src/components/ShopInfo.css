@@ -1,0 +1,45 @@
+.shop-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  background: url("/img/shopinfo-bg.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+}
+
+.shop-card {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.shop-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.shop-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #e63946;
+  display: inline-block;
+}
+
+.shop-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
