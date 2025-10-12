@@ -8,7 +8,11 @@ export default function CheckoutPage() {
   const { cart, clearCart } = useCart();
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({ name: "", email: "", address: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    address: "",
+  });
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,13 +38,14 @@ export default function CheckoutPage() {
 
     try {
       const orderId = await createOrder(order);
-      alert(
-        `Compra confirmada ✅\n\nGracias ${formData.name}!\nTu número de orden es: ${orderId}`
-      );
+
+      // 🔥 En lugar del alert, redirigimos a la página de confirmación
       clearCart();
-      navigate("/");
+      navigate("/order-success", {
+        state: { name: formData.name, orderId },
+      });
     } catch (error) {
-      console.log("Error en createOrder:", error);
+      console.error("Error en createOrder:", error);
       throw error;
     }
   };
@@ -76,7 +81,11 @@ export default function CheckoutPage() {
         />
 
         <div className="checkout-buttons">
-          <button type="button" onClick={() => navigate("/cart")} className="back-btn">
+          <button
+            type="button"
+            onClick={() => navigate("/cart")}
+            className="back-btn"
+          >
             ← Volver al carrito
           </button>
           <button type="submit">Confirmar compra</button>
@@ -85,6 +94,7 @@ export default function CheckoutPage() {
     </div>
   );
 }
+
 
 
 

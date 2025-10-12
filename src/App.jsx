@@ -11,6 +11,8 @@ import Productos from "./pages/Products.jsx";
 import Contact from "./pages/Contact.jsx";
 import { CartProvider } from "./context/CartProvider.jsx";
 import Toast from "./components/Toast.jsx";
+import OrderSuccess from "./pages/OrderSuccess.jsx";
+
 
 export default function App() {
   return (
@@ -27,6 +29,7 @@ export default function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/contacto" element={<Contact />} />
+            <Route path="/order-success" element={<OrderSuccess />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
