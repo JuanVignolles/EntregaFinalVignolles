@@ -1,8 +1,8 @@
-import "./Home.css";
 import Carousel from "../components/Carousel.jsx";
 import Offers from "../components/Offers";
 import InfoSection from "../components/InfoSection.jsx";
 import ShopInfo from "../components/ShopInfo.jsx";
+import About from "../components/About.jsx";
 
 export default function Home() {
   return (
@@ -14,18 +14,14 @@ export default function Home() {
       <Offers />
 
       {/* Sección: ¿Quiénes somos? */}
-      <section className="about">
-        <h2>¿Quiénes somos?</h2>
-        <p>
-          Somos Aromática Fragancias, especialistas en velas artesanales
-          creadas con amor para transformar tus espacios en rincones únicos.
-          Buscamos brindar calidez, estilo y bienestar en cada una de nuestras
-          piezas.
-        </p>
-      </section>
-      {/* Sección de información*/}
+      <About />
+
+      {/* Sección de información de velas*/}
       <InfoSection />
+
+      {/* Sección de información de envios y medios de pago*/}
       <ShopInfo />
+
     </div>
   );
 }
