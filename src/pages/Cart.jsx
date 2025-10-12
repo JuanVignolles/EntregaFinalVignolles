@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Cart.css";
 
 export default function Cart() {
-  const { cart, clearCart } = useCart();
+  const { cart, clearCart, removeFromCart } = useCart();
 
   if (!cart || cart.length === 0) {
     return (
@@ -31,6 +31,7 @@ export default function Cart() {
           <li key={item.id}>
             {item.title} - ${item.price} x {item.quantity} = $
             {item.price * item.quantity}
+          <button className="remove-btn" onClick={() => removeFromCart(item.id)}> − </button>
           </li>
         ))}
       </ul>

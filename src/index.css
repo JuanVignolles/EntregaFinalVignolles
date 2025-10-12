@@ -3,7 +3,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: "Instrument Serif", serif;
+  font-family: "Exo 2", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
