@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/config";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import "./Carousel.css";
+import "./Carousel.scss";
 
 export default function Carousel() {
   const [slides, setSlides] = useState([]);

@@ -1,6 +1,6 @@
 import { useCart } from "../context/CartContext.js";
 import { Link } from "react-router-dom";
-import './CartWidget.css';
+import './CartWidget.scss';
 
 export default function CartWidget() {
   const { totalUnits } = useCart();

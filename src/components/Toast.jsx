@@ -1,5 +1,5 @@
 import { useCart } from "../context/CartContext.js";
-import "./Toast.css";
+import "./Toast.scss";
 
 export default function Toast() {
   const { showToast } = useCart();

@@ -6,10 +6,10 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   box-shadow: 0 2px 15px rgba(0,0,0,0.1);
   text-align: center;
-  color: #f7f7f7;
+  color: var(--color-white);
   text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
 }
 
@@ -21,23 +21,23 @@
 
 .checkout input {
   padding: 0.6rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-light);
 }
 
 .checkout button {
-  background-color: #ff6f61;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   padding: 0.6rem;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background var(--transition-normal);
 }
 
 .checkout button:hover {
-  background-color: #e65b50;
+  background-color: var(--color-primary-hover);
 }
 
 .checkout-buttons {
@@ -48,15 +48,15 @@
 }
 
 .back-btn {
-  background: #ccc;
-  color: #333;
+  background: var(--color-primary);
+  color: var(--color-white);
   border: none;
   padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background var(--transition-normal);
 }
 
 .back-btn:hover {
-  background: #b3b3b3;
+  background: var(--color-primary-hover);
 }

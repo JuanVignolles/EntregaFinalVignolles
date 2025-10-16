@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext.js";
 import { useNavigate } from "react-router-dom";
-import "./Checkout.css";
+import "./Checkout.scss";
 import { createOrder } from "../services/orders";
 
 export default function CheckoutPage() {
@@ -39,7 +39,6 @@ export default function CheckoutPage() {
     try {
       const orderId = await createOrder(order);
 
-      // 🔥 En lugar del alert, redirigimos a la página de confirmación
       clearCart();
       navigate("/order-success", {
         state: { name: formData.name, orderId },

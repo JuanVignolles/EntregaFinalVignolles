@@ -3,15 +3,15 @@
   top: 100px; 
   left: 50%;
   transform: translate(-50%, -10px);
-  background: #222;
-  color: #fff;
+  background: var(--color-dark);
+  color: var(--color-white);
   padding: 12px 24px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity var(--transition-normal) ease, transform var(--transition-normal) ease;
   z-index: 999;
   font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-md);
   text-align: center;
 }
 

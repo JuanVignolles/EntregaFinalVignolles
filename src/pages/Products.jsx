@@ -3,7 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase/config";
 import { useCart } from "../context/CartContext.js";
 import Loader from "../components/Loader";
-import "./Products.css";
+import "./Products.scss";
 
 export default function Productos() {
   const [productos, setProductos] = useState([]);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./InfoSection.css";
+import "./InfoSection.scss";
 
 export default function InfoSection() {
   const items = [
@@ -28,26 +28,31 @@ export default function InfoSection() {
   };
 
   return (
-    <section className="info-section">
+    <section className="info-section" >
       <h2>Más sobre nuestras velas</h2>
       <div className="info-grid">
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className={`info-card ${openIndex === index ? "open" : ""}`}
-            onClick={() => toggle(index)}
-          >
-            <h3>{item.title}</h3>
-            <div className={`arrow ${openIndex === index ? "up" : "down"}`}>
-              ▼
+        {items.map((item, index) => {
+          const isOpen = openIndex === index;
+
+          return (
+            <div
+              key={index}
+              className={`info-card ${isOpen ? "open" : ""}`}
+              onClick={() => toggle(index)}
+            >
+              <h3>{item.title}</h3>
+              <div className={`arrow ${isOpen ? "up" : ""}`}>▼</div>
+
+              <div className="info-content" style={{ maxHeight: isOpen ? "300px" : "0px", opacity: isOpen ? 1 : 0, transition: "max-height 0.4s ease, opacity 0.4s ease",}}>
+                <p>{item.text}</p>
+              </div>
             </div>
-            <div className="info-content">
-              <p>{item.text}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
 }
+
+
 

@@ -9,14 +9,12 @@ import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import Productos from "./pages/Products.jsx";
 import Contact from "./pages/Contact.jsx";
-import { CartProvider } from "./context/CartProvider.jsx";
 import Toast from "./components/Toast.jsx";
 import OrderSuccess from "./pages/OrderSuccess.jsx";
 
 
 export default function App() {
   return (
-    <CartProvider>
       <div className="app-container">
         <NavBar />
         <Toast />
@@ -35,7 +33,6 @@ export default function App() {
         </div>
         <Footer />
       </div>
-    </CartProvider>
   );
 }
 

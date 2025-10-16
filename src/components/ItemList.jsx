@@ -1,5 +1,5 @@
 import Item from "./Item";
-import "./ItemList.css";
+import "./ItemList.scss";
 
 export default function ItemList({ products }) {
   if (!products || products.length === 0) return <p>No hay productos.</p>;

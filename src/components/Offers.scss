@@ -1,6 +1,5 @@
 /* ===== SECCIÓN OFERTAS ===== */
 .offers {
-  width: 100vw; 
   margin: 0; 
   padding: 4rem 2rem;
   text-align: center;
@@ -9,13 +8,15 @@
   background-position: center;
   background-attachment: fixed; 
   background-repeat: no-repeat;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 /* ===== TÍTULO ===== */
 .offers h2 {
   margin-bottom: 2rem;
-  font-size: 2rem;
-  color: #f7f7f7;
+  font-size: var(--font-size-title);
+  color: var(--color-white);
   text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
 }
 
@@ -31,11 +32,11 @@
 
 /* ===== CARD ===== */
 .offer-card {
-  background: linear-gradient(135deg, #fff8fa, #f8eff6);
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--color-white), var(--color-soft));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
   padding: 0.8rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform var(--transition-normal), box-shadow 0.3s;
   text-align: center;
   width: 100%;
   max-width: 280px;
@@ -51,48 +52,48 @@
   width: 100%;
   height: 220px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   margin-bottom: 6px;
-  background-color: #f7f7f7;
+  background-color: var(--color-white);
 }
 
 /* ===== TEXTO ===== */
 .offer-card h3 {
   margin: 6px 0 4px;
-  font-size: 1.1rem;
-  color: #333;
+  font-size: var(--font-size-base);
+  color: var(--color-dark);
 }
 
 .price {
   margin: 0.8rem 0;
-  font-size: 1.1rem;
+  font-size: var(--font-size-base);
 }
 
 .price .old {
   text-decoration: line-through;
-  color: #888;
+  color: var(--text-secondary);
   margin-right: 0.5rem;
 }
 
 .price .new {
-  color: #e63946;
+  color: var(--color-secondary);
   font-weight: bold;
 }
 
 /* ===== BOTÓN ===== */
 .offer-card button {
-  background: #e63946;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-white);
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: background 0.3s;
+  font-size: var(--font-size-base);
+  transition: background var(--transition-normal);
 }
 
 .offer-card button:hover {
-  background: #c02734;
+  background: var(--color-primary-hover);
 }
 
 /* ===== RESPONSIVO ===== */

@@ -1,0 +1,19 @@
+.cart-widget {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  color: var(--color-secondary);
+  background: var(--color-white);
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all var(--transition-normal);
+}
+
+.cart-widget:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+}

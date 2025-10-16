@@ -1,5 +1,5 @@
 import ItemCount from "./ItemCount.jsx";
-import './ItemDetail.css';
+import './ItemDetail.scss';
 
 export default function ItemDetail({ product, onAdd, added }) {
   if (!product) return <p>Producto no encontrado.</p>;

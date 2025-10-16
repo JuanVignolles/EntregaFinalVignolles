@@ -8,16 +8,17 @@
   background-attachment: fixed; 
   background-repeat: no-repeat;
   padding: 3rem 2rem;
-  margin-top: 4rem;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .shop-card {
-  background: #f7f7f7;
-  border-radius: 12px;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
   text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
 }
 
 .shop-card:hover {
@@ -26,20 +27,20 @@
 }
 
 .shop-icon {
-  font-size: 2rem;
+  font-size: var(--font-size-title);
   display: block;
   margin-bottom: 0.8rem;
 }
 
 .shop-card h3 {
-  font-size: 1.3rem;
+  font-size: var(--font-size-medium);
   margin-bottom: 0.5rem;
-  border-bottom: 2px solid #e63946;
+  border-bottom: 2px solid var(--color-secondary);
   display: inline-block;
 }
 
 .shop-card p {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
   line-height: 1.6;
 }

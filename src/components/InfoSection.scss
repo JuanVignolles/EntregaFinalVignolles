@@ -2,17 +2,19 @@
 .info-section {
   padding: 4rem 2rem;
   text-align: center;
-  background: url("/img/info-bg.jpg"); 
+  background: url("/img/info-bg.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-repeat: no-repeat;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .info-section h2 {
-  font-size: 2.5rem;
+  font-size: var(--font-size-title);
   margin-bottom: 3rem;
-  color: #f7f7f7;
+  color: var(--color-white);
   text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
 }
 
@@ -27,13 +29,14 @@
 
 /* ===== CARD ===== */
 .info-card {
-  background-color: #f7f7f7;
+  background-color: var(--color-white);
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   padding: 2rem 1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
+  overflow: hidden;
 }
 
 .info-card:hover {
@@ -43,18 +46,19 @@
 
 /* ===== TÍTULO ===== */
 .info-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.6rem;
-  border-bottom: 2px solid #e63946;
+  font-size: var(--font-size-medium);
+  margin-bottom: 0.3rem;
+  border-bottom: 2px solid var(--color-secondary);
   display: inline-block;
   padding-bottom: 0.3rem;
 }
 
 /* ===== FLECHA ===== */
 .arrow {
-  font-size: 1.3rem;
-  color: #000000;
+  font-size: var(--font-size-medium);
+  color: var(--color-dark);
   transition: transform 0.3s ease;
+  margin-top: 0.5rem;
 }
 
 .arrow.up {
@@ -63,21 +67,14 @@
 
 /* ===== CONTENIDO ===== */
 .info-content {
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-  opacity: 0;
+  margin-top: 0;
 }
 
-.info-card.open .info-content {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 1rem;
-}
-
+/* ===== TEXTO ===== */
 .info-content p {
-  color: #555;
-  font-size: 1rem;
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
   line-height: 1.6;
   margin: 0 auto;
   max-width: 90%;
@@ -95,4 +92,5 @@
     grid-template-columns: 1fr;
   }
 }
+
 

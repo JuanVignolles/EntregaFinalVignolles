@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import "./OrderSuccess.css";
+import "./OrderSuccess.scss";
 
 export default function OrderSuccess() {
   const location = useLocation();
@@ -16,7 +16,7 @@ export default function OrderSuccess() {
 
         <div className="order-buttons">
           <Link to="/" className="btn">Volver al inicio</Link>
-          <Link to="/productos" className="btn secondary">Ver más productos</Link>
+          <Link to="/productos" className="btn">Ver más productos</Link>
         </div>
       </div>
     </div>

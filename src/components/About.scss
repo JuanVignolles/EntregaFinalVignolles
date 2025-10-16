@@ -1,17 +1,18 @@
 .about {
-  width: 100%;
-  margin: 3rem 0;
+  margin: 0;
   text-align: center;
   padding: 3rem 2rem;
   background: url("/img/about-bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-lg);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 .about h2 {
-  font-size: 2.5rem;
-  color: #f7f7f7;
+  font-size: var(--font-size-title);
+  color: var(--color-white);
   margin-bottom: 1rem;
   text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
 }
@@ -19,8 +20,8 @@
 .about p {
   max-width: 900px;
   margin: 0 auto;
-  font-size: 1.3rem;
+  font-size: var(--font-size-medium);
   line-height: 1.8;
-  color: #fff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  color: var(--color-white);
+  text-shadow: var(--shadow-md);
 }

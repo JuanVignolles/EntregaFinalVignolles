@@ -1,6 +1,6 @@
 import { useCart } from "../context/CartContext.js";
 import { Link } from "react-router-dom";
-import "./Cart.css";
+import "./Cart.scss";
 
 export default function Cart() {
   const { cart, clearCart, removeFromCart } = useCart();
@@ -31,16 +31,16 @@ export default function Cart() {
           <li key={item.id}>
             {item.title} - ${item.price} x {item.quantity} = $
             {item.price * item.quantity}
-          <button className="remove-btn" onClick={() => removeFromCart(item.id)}> − </button>
+          <button className="cart-btn" onClick={() => removeFromCart(item.id)}> − </button>
           </li>
         ))}
       </ul>
       <div className="cart-buttons">
         <h3>Total: ${total}</h3>
-        <button onClick={clearCart}>Vaciar carrito</button>
+        <button className="cart-btn" onClick={clearCart}>Vaciar carrito</button>
         <br />
         <Link to="/checkout">
-          <button>Avanzar a la compra</button>
+          <button className="cart-btn">Avanzar a la compra</button>
         </Link>
       </div>
     </div>
