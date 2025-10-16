@@ -1,6 +1,6 @@
 .shop-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr); 
   gap: 1.5rem;
   background: url("/img/shopinfo-bg.jpg"); 
   background-size: cover;
@@ -43,4 +43,45 @@
   font-size: var(--font-size-base);
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .shop-info {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
+  .shop-card h3 {
+    font-size: var(--font-size-medium);
+  }
+
+  .shop-card p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-info {
+    grid-template-columns: 1fr; 
+  }
+  .shop-card h3 {
+    font-size: var(--font-size-medium);
+  }
+
+  .shop-card p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px){
+  .shop-info {
+    grid-template-columns: 1fr; 
+  }
+  .shop-card h3 {
+    font-size: var(--font-size-medium);
+  }
+
+  .shop-card p {
+    font-size: var(--font-size-base);
+  }
 }

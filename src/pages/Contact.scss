@@ -110,3 +110,36 @@ textarea:focus {
 .submit-btn:hover {
   background-color: var(--color-primary-hover);
 }
+
+.success-message {
+  margin-top: 1rem;
+  background-color: var(--color-primary); 
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  animation: fadeInOut 4s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-5px); }
+  10%, 90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .intro{
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 600px) {
+    .intro{
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 480px){
+    .intro{
+    font-size: 0.7rem;
+  }
+}

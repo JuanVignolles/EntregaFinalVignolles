@@ -23,11 +23,11 @@
 /* ===== GRID ===== */
 .offers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   justify-items: center;
   max-width: 1000px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 /* ===== CARD ===== */
@@ -60,8 +60,12 @@
 /* ===== TEXTO ===== */
 .offer-card h3 {
   margin: 6px 0 4px;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-medium);
   color: var(--color-dark);
+}
+
+.offer-card p{
+  font-size: var(--font-size-base);
 }
 
 .price {
@@ -97,13 +101,44 @@
 }
 
 /* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
-  .offers-grid {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 1024px) {
   .offer-card img {
     height: 200px;
   }
+  .offer-card h3{
+    font-size: 1.5rem;
+  }
+  .offer-card p{
+    font-size: 1rem;
+  }
 }
+@media (max-width: 600px) {
+    .offers-grid {
+    grid-template-columns: 1fr;
+  }
+    .offer-card img {
+    height: 200px;
+  }
+  .offer-card h3{
+    font-size: 1.2rem;
+  }
+  .offer-card p{
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 480px){
+    .offers-grid {
+    grid-template-columns: 1fr;
+  }
+    .offer-card img {
+    height: 200px;
+  }
+  .offer-card h3{
+    font-size: 1rem;
+  }
+  .offer-card p{
+    font-size: 0.7rem;
+  }
+}
+
 

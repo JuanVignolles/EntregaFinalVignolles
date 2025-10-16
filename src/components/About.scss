@@ -20,8 +20,39 @@
 .about p {
   max-width: 900px;
   margin: 0 auto;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-base);
   line-height: 1.8;
   color: var(--color-white);
   text-shadow: var(--shadow-md);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .about h2{
+    font-size: 1.5rem;
+  }
+
+  .about p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 600px) {
+  .about h2{
+    font-size: var(--font-size-title);
+  }
+
+  .about p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px){
+  .about h2{
+    font-size: var(--font-size-title);
+  }
+
+  .about p {
+    font-size: var(--font-size-base);
+  }
 }

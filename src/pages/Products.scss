@@ -18,15 +18,12 @@
 .seccion.florales {
   background-image: url("/img/florales-bg.jpg");
 }
-
 .seccion.dulces {
   background-image: url("/img/dulces-bg.jpg");
 }
-
 .seccion.amaderadas {
   background-image: url("/img/amaderadas-bg.jpg");
 }
-
 .seccion.citricas {
   background-image: url("/img/citricas-bg.jpg");
 }
@@ -41,16 +38,18 @@
   font-weight: 600;
 }
 
+/* ===== GRID PRODUCTOS ===== */
 .productos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px; 
+  grid-template-columns: repeat(4, 1fr); // 🖥️ 4 columnas en escritorio
+  gap: 30px;
   justify-items: center;
   align-items: stretch;
   margin: 0 auto;
-  width: 95%; 
+  width: 95%;
 }
 
+/* ===== CARD PRODUCTO ===== */
 .producto-card {
   border-radius: 10px;
   box-shadow: var(--shadow-sm);
@@ -72,11 +71,11 @@
 
 .producto-card img {
   width: 100%;
-  height: 200px; 
-  object-fit: cover; 
+  height: 200px;
+  object-fit: cover;
   border-radius: var(--radius-md);
   display: block;
-  background-color: var(--color-white); 
+  background-color: var(--color-white);
 }
 
 .producto-card h3 {
@@ -111,46 +110,47 @@
   background: var(--color-primary-hover);
 }
 
+/* ===== COLORES SEGÚN CATEGORÍA ===== */
 .producto-card.florales {
   background: linear-gradient(135deg, #f8adcb, #fce29b);
 }
-
 .producto-card.dulces {
   background: linear-gradient(135deg, #aae5e7, #ebb0ce);
 }
-
 .producto-card.amaderadas {
   background: linear-gradient(135deg, #694320, #8cd9a3);
 }
-
 .producto-card.citricas {
   background: linear-gradient(135deg, #f89a42, #eef595);
 }
 
-/* 📱 Responsive */
-@media (max-width: 768px) {
+/* 📱 ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
   .productos-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); 
     gap: 10px;
   }
 
   .producto-card {
-    max-width: 180px;
-    padding: 10px;
+    max-width: 220px;
   }
 
   .producto-card img {
-    height: 120px;
+    height: 160px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .productos-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
+    grid-template-columns: 1fr; 
+    gap: 5px;
   }
 
   .producto-card {
-    max-width: 160px;
+    max-width: 100%;
+  }
+
+  .producto-card img {
+    height: 140px;
   }
 }
