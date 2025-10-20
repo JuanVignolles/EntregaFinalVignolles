@@ -1,32 +1,32 @@
 /*  Variables y Mixins */
-@import "./variables";
-@import "./breakpoints";
+@use "./variables" as *;
+@use "./breakpoints" as *;
 
 /*  Globales y Responsive */
-@import "./global";
-@import "./responsive";
+@use "./global" as *;
+@use "./responsive" as *;
 
 /*  COMPONENTES  */
-@import "../components/About";
-@import "../components/Carousel";
-@import "../components/CartWidget";
-@import "../components/Footer";
-@import "../components/InfoSection";
-@import "../components/Item";
-@import "../components/ItemCount";
-@import "../components/ItemDetail";
-@import "../components/ItemList";
-@import "../components/Loader";
-@import "../components/NavBar";
-@import "../components/Offers";
-@import "../components/ShopInfo";
-@import "../components/Toast";
+@use "../components/About" as *;
+@use "../components/Carousel" as *;
+@use "../components/CartWidget" as *;
+@use "../components/Footer" as *;
+@use "../components/InfoSection" as *;
+@use "../components/Item" as *;
+@use "../components/ItemCount" as *;
+@use "../components/ItemDetail" as *;
+@use "../components/ItemList" as *;
+@use "../components/Loader" as *;
+@use "../components/NavBar" as *;
+@use "../components/Offers" as *;
+@use "../components/ShopInfo" as *;
+@use "../components/Toast" as *;
 
 /*  PÁGINAS  */
-@import "../pages/Cart";
-@import "../pages/Checkout";
-@import "../pages/Contact";
-@import "../pages/OrderSuccess";
-@import "../pages/Products";
+@use "../pages/Cart" as *;
+@use "../pages/Checkout" as *;
+@use "../pages/Contact" as *;
+@use "../pages/OrderSuccess" as *;
+@use "../pages/Products" as *;
 
 

@@ -1,4 +1,5 @@
 /* Estilos Responsivos Globales */
+@use "./breakpoints" as *;
 
 @include responsive(tablet) {
   body {

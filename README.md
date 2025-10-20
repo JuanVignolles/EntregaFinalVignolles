@@ -1,46 +1,111 @@
-Aromática Fragancias 
+🌸 Aromática Fragancias
 
-Proyecto de e-commerce de velas aromáticas desarrollado con React + Vite para trabajo final del curso React de Coderhouse.
+Aromática Fragancias es un proyecto de e-commerce desarrollado con React + Vite para la venta de velas aromáticas artesanales.
+Forma parte del proyecto final del curso de React de Coderhouse, y fue extendido con funcionalidades adicionales, optimizaciones visuales y estructura escalable.
 
-Descripción:
+🕯️ Descripción General
 
-Este proyecto consiste en una tienda online de velas aromáticas, con:
+Este proyecto permite al usuario navegar por distintas categorías de velas, ver detalles de cada producto, agregar items al carrito, realizar un checkout y explorar ofertas especiales.
+Incluye un diseño moderno, totalmente responsive, con SCSS modularizado, animaciones suaves y persistencia de datos en Firebase.
 
--Visualización de categorías y productos.
+----------------------------------------------------------------------------
 
--Página de detalles de cada producto.
+⚙️ Funcionalidades Principales
+🛍️ Tienda
 
--Carrito de compras persistente (localStorage).
+Visualización de categorías y productos desde Firebase.
 
--Checkout con formulario básico.
+Página individual para detalle de producto.
 
--Footer y NavBar funcionales.
+Listado de ofertas dinámicas obtenidas desde Firestore.
 
--Estilos modernos, y modularizados por componente.
+🧺 Carrito de Compras
 
-Tecnologías:
+Implementación con Context API.
 
--JavaScript
+Persistencia con localStorage.
 
--React
+Suma, eliminación y vaciado del carrito.
 
--React Router DOM
+Cálculo automático del total.
 
--Context API (Carrito)
+💳 Checkout
 
--Firebase (configuración de Firestore)
+Formulario con validación básica.
 
--Vite como bundler
+Creación de órdenes en la colección orders de Firebase.
 
--CSS modular por componente
+Redirección tras la compra.
 
-Uso:
+🔥 Ofertas
 
--Acceder a la página principal para ver las categorías de velas.
+Sección “Ofertas y Promociones” con productos destacados.
 
--Hacer click en una categoría para ver los productos correspondientes.
+Efectos hover y animaciones.
 
--Agregar productos al carrito desde la página de detalle.
+Cards ajustadas en altura para un diseño uniforme.
 
--Finalizar compra en la página de checkout.
+🌿 Info Section
 
+Sección interactiva con información sobre la filosofía ecológica del proyecto.
+
+Cards expandibles con animación CSS + React state.
+
+🧭 Navbar y Footer
+
+Navbar sticky con transición de transparencia al hacer scroll.
+
+Navegación con React Router DOM.
+
+Footer informativo con redes y créditos.
+
+----------------------------------------------------------------------------
+
+🧰 Tecnologías Utilizadas
+Categoría	Tecnologías
+Frontend	React + Vite
+Routing	React Router DOM
+Estado Global	Context API
+Backend / DB	Firebase (Firestore)
+Estilos	SCSS modularizado + Variables + Mixins de breakpoints
+Animaciones	CSS transitions + keyframes personalizados
+Build & Deploy	Vite + configuración optimizada para producción
+
+----------------------------------------------------------------------------
+
+🧾 Scripts Disponibles
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Compilar para producción
+npm run build
+
+# Previsualizar el build
+npm run preview
+
+----------------------------------------------------------------------------
+
+🔥 Variables Globales (SCSS)
+
+El proyecto usa variables y mixins personalizados definidos en variables.scss y _breakpoints.scss, incluyendo:
+
+--color-primary, --color-secondary, --color-soft
+
+--radius-lg, --radius-sm
+
+--font-size-base, --font-size-title
+
+Mixin: @include responsive(tablet) { ... } para breakpoints reutilizables.
+
+----------------------------------------------------------------------------
+
+
+💫 Autor
+
+Desarrollado por Juan Pablo Vignolles
+📘 E-commerce funcional, mejorado del Proyecto Final del curso React.js – Coderhouse
+💻 Hecho con pasión, café y paciencia ✨
