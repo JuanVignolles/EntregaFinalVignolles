@@ -1,21 +1,32 @@
+/*  Variables y Mixins */
 @import "./variables";
-@import "./global.scss";
-@import "../components/About.scss";
-@import "../components/Carousel.scss";
-@import "../components/CartWidget.scss";
-@import "../components/Footer.scss";
-@import "../components/InfoSection.scss";
-@import "../components/Item.scss";
-@import "../components/ItemCount.scss";
-@import "../components/ItemDetail.scss";
-@import "../components/ItemList.scss";
-@import "../components/Loader.scss";
-@import "../components/NavBar.scss";
-@import "../components/Offers.scss";
-@import "../components/ShopInfo.scss";
-@import "../components/Toast.scss";
-@import "../pages/Cart.scss";
-@import "../pages/Checkout.scss";
-@import "../pages/Contact.scss";
-@import "../pages/OrderSuccess.scss";
-@import "../pages/Products.scss";
+@import "./breakpoints";
+
+/*  Globales y Responsive */
+@import "./global";
+@import "./responsive";
+
+/*  COMPONENTES  */
+@import "../components/About";
+@import "../components/Carousel";
+@import "../components/CartWidget";
+@import "../components/Footer";
+@import "../components/InfoSection";
+@import "../components/Item";
+@import "../components/ItemCount";
+@import "../components/ItemDetail";
+@import "../components/ItemList";
+@import "../components/Loader";
+@import "../components/NavBar";
+@import "../components/Offers";
+@import "../components/ShopInfo";
+@import "../components/Toast";
+
+/*  PÁGINAS  */
+@import "../pages/Cart";
+@import "../pages/Checkout";
+@import "../pages/Contact";
+@import "../pages/OrderSuccess";
+@import "../pages/Products";
+
+

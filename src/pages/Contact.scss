@@ -114,7 +114,7 @@ textarea:focus {
 .success-message {
   margin-top: 1rem;
   background-color: var(--color-primary); 
-  color: #fff;
+  color: var(--color-white);
   padding: 10px 16px;
   border-radius: var(--radius-md);
   text-align: center;
@@ -127,17 +127,21 @@ textarea:focus {
   100% { opacity: 0; transform: translateY(-5px); }
 }
 
-/* ===== RESPONSIVO ===== */
+/* TABLET */
 @media (max-width: 1024px) {
   .intro{
     font-size: 0.7rem;
   }
 }
-@media (max-width: 600px) {
+
+/* MOBILE */
+@media (max-width: 768px) {
     .intro{
     font-size: 0.7rem;
   }
 }
+
+/* SMALL MOBILE */
 @media (max-width: 480px){
     .intro{
     font-size: 0.7rem;

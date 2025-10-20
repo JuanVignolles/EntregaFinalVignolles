@@ -10,7 +10,7 @@ export default function Contact() {
     mensaje: "",
   });
 
-  const [successMsg, setSuccessMsg] = useState(""); // 👈 mensaje de éxito
+  const [successMsg, setSuccessMsg] = useState(""); 
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -20,13 +20,10 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Aquí iría la lógica real de envío (email API, backend, etc.)
     console.log("Mensaje enviado:", formData);
 
-    // Mostrar mensaje de confirmación
     setSuccessMsg("✅ ¡Tu mensaje fue enviado con éxito!");
 
-    // Limpiar formulario
     setFormData({
       nombre: "",
       email: "",
@@ -34,7 +31,6 @@ export default function Contact() {
       mensaje: "",
     });
 
-    // Ocultar mensaje luego de unos segundos
     setTimeout(() => setSuccessMsg(""), 4000);
   };
 
@@ -119,7 +115,6 @@ export default function Contact() {
           Enviar mensaje
         </button>
 
-        {/* Mensaje de confirmación */}
         {successMsg && <p className="success-message">{successMsg}</p>}
       </form>
     </div>

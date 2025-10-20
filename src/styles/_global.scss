@@ -1,3 +1,4 @@
+/* Estilos Globales */
 body {
   margin: 0;
   height: 100%;
@@ -21,4 +22,11 @@ h1, h2 {
 
 .main-content {
   flex: 1;
+}
+
+/* Ajustes base para imágenes  */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

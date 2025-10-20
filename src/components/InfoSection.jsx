@@ -28,7 +28,7 @@ export default function InfoSection() {
   };
 
   return (
-    <section className="info-section" >
+    <section className="info-section">
       <h2>Más sobre nuestras velas</h2>
       <div className="info-grid">
         {items.map((item, index) => {
@@ -42,8 +42,7 @@ export default function InfoSection() {
             >
               <h3>{item.title}</h3>
               <div className={`arrow ${isOpen ? "up" : ""}`}>▼</div>
-
-              <div className="info-content" style={{ maxHeight: isOpen ? "300px" : "0px", opacity: isOpen ? 1 : 0, transition: "max-height 0.4s ease, opacity 0.4s ease",}}>
+              <div className={`info-content ${isOpen ? "visible" : ""}`}>
                 <p>{item.text}</p>
               </div>
             </div>

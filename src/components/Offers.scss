@@ -1,144 +1,173 @@
-/* ===== SECCIÓN OFERTAS ===== */
 .offers {
-  margin: 0; 
+  margin: 0;
   padding: 4rem 2rem;
   text-align: center;
-  background: url("/img/offers-bg.jpg"); 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; 
-  background-repeat: no-repeat;
+  background: url("/img/offers-bg.jpg") center/cover no-repeat fixed;
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-md);
-}
 
-/* ===== TÍTULO ===== */
-.offers h2 {
-  margin-bottom: 2rem;
-  font-size: var(--font-size-title);
-  color: var(--color-white);
-  text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
-}
-
-/* ===== GRID ===== */
-.offers-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  justify-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* ===== CARD ===== */
-.offer-card {
-  background: linear-gradient(135deg, var(--color-white), var(--color-soft));
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  padding: 0.8rem;
-  transition: transform var(--transition-normal), box-shadow 0.3s;
-  text-align: center;
-  width: 100%;
-  max-width: 280px;
-}
-
-.offer-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-/* ===== IMAGEN ===== */
-.offer-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  margin-bottom: 6px;
-  background-color: var(--color-white);
-}
-
-/* ===== TEXTO ===== */
-.offer-card h3 {
-  margin: 6px 0 4px;
-  font-size: var(--font-size-medium);
-  color: var(--color-dark);
-}
-
-.offer-card p{
-  font-size: var(--font-size-base);
-}
-
-.price {
-  margin: 0.8rem 0;
-  font-size: var(--font-size-base);
-}
-
-.price .old {
-  text-decoration: line-through;
-  color: var(--text-secondary);
-  margin-right: 0.5rem;
-}
-
-.price .new {
-  color: var(--color-secondary);
-  font-weight: bold;
-}
-
-/* ===== BOTÓN ===== */
-.offer-card button {
-  background: var(--color-primary);
-  color: var(--color-white);
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: var(--font-size-base);
-  transition: background var(--transition-normal);
-}
-
-.offer-card button:hover {
-  background: var(--color-primary-hover);
-}
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 1024px) {
-  .offer-card img {
-    height: 200px;
+  /*  TÍTULO  */
+  h2 {
+    margin-bottom: 2rem;
+    font-size: var(--font-size-title);
+    color: var(--color-white);
+    text-shadow: 5px 1px 3px rgba(0, 0, 0, 1);
   }
-  .offer-card h3{
-    font-size: 1.5rem;
+
+  /*  GRID  */
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    /*  CARD */
+    .offer-card {
+      background: linear-gradient(135deg, var(--color-white), var(--color-soft));
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 0.8rem;
+      text-align: center;
+      width: 100%;
+      max-width: 280px;
+      transition: transform var(--transition-normal), box-shadow 0.3s;
+
+      &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+      }
+
+      /*  IMAGEN  */
+      img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: var(--radius-md);
+        margin-bottom: 6px;
+        background-color: var(--color-white);
+      }
+
+      /* TEXTO */
+      h3 {
+        margin: 6px 0 4px;
+        font-size: var(--font-size-medium);
+        color: var(--color-dark);
+      }
+
+      p {
+        font-size: var(--font-size-base);
+        color: var(--text-dark);
+      }
+
+      /*  PRECIO  */
+      .price {
+        margin: 0.8rem 0;
+        font-size: var(--font-size-base);
+
+        .old {
+          text-decoration: line-through;
+          color: var(--text-secondary);
+          margin-right: 0.5rem;
+        }
+
+        .new {
+          color: var(--color-secondary);
+          font-weight: bold;
+        }
+      }
+
+      /* BOTÓN  */
+      button {
+        background: var(--color-primary);
+        color: var(--color-white);
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: var(--font-size-base);
+        transition: background var(--transition-normal);
+
+        &:hover {
+          background: var(--color-primary-hover);
+        }
+      }
+    }
   }
-  .offer-card p{
-    font-size: 1rem;
-  }
-}
-@media (max-width: 600px) {
+
+  /* TABLET  */
+  @media (max-width: 1024px) {
     .offers-grid {
-    grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .offers-grid .offer-card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+    .offers-grid .offer-card {
+      max-width: 260px;
+
+      img {
+        height: 200px;
+      }
+
+      h3 {
+        font-size: var(--font-size-medium);
+      }
+
+      p {
+        font-size: var(--font-size-base);
+      }
+    }
   }
-    .offer-card img {
-    height: 200px;
-  }
-  .offer-card h3{
-    font-size: 1.2rem;
-  }
-  .offer-card p{
-    font-size: 0.8rem;
-  }
-}
-@media (max-width: 480px){
+
+  /* MOBILE  */
+  @media (max-width: 768px) {
     .offers-grid {
-    grid-template-columns: 1fr;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .offers-grid .offer-card {
+      max-width: 300px;
+
+      img {
+        height: 190px;
+      }
+
+      h3 {
+        font-size: var(--font-size-medium);
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
   }
-    .offer-card img {
-    height: 200px;
-  }
-  .offer-card h3{
-    font-size: 1rem;
-  }
-  .offer-card p{
-    font-size: 0.7rem;
+
+  /* SMALL MOBILE */
+  @media (max-width: 480px) {
+    .offers-grid .offer-card {
+      img {
+        height: 170px;
+      }
+
+      h3 {
+        font-size: var(--font-size-base)
+      }
+
+      p {
+        font-size: 0.7rem;
+      }
+    }
   }
 }
+
+
 
 

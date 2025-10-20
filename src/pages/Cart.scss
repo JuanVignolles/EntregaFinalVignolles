@@ -128,35 +128,27 @@
   }
 }
 
-/* =========================
-RESPONSIVE
-========================= */
-@media (max-width: 768px) {
-  .cart {
-    margin: 1.5rem;
-    padding: 1.5rem;
+  /* MOBILE  */
+  @media (max-width: 768px) {
+    ul li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .cart-buttons h3 {
+      margin-bottom: 1rem;
+    }
   }
 
-  .cart li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+  /* SMALL MOBILE */
+  @media (max-width: 480px) {
+
+    .cart-btn {
+      width: 50%;
+      margin-top: 0.8rem;
+    }
   }
 
-  .cart-buttons h3 {
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .cart {
-    padding: 1rem;
-  }
-
-  .cart-btn {
-    width: 100%;
-    margin-top: 0.8rem;
-  }
-}
 
 

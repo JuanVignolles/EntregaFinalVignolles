@@ -59,7 +59,7 @@ export default function Carousel() {
         />
       ))}
 
-      {/* Flechas */}
+      {/* Flechits */}
       <button className="carousel-btn prev" onClick={prevSlide}>
         <FaChevronLeft />
       </button>

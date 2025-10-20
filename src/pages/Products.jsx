@@ -26,7 +26,7 @@ export default function Productos() {
     fetchProductos();
   }, []);
 
-  // 🔥 categorías 
+  // categorías 
   const categorias = ["florales", "dulces", "amaderadas", "citricas"];
 
   if (loading) return <Loader />;
